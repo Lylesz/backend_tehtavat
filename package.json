@@ -6,11 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build:ui": "rmdir /s /q dist && cd \"C:\\Users\\mikko\\avoin_kurssi_full_stack\\full-stack_kurssi\\Osa 3\\puhelinluettelo_frontend\" && npm run build && xcopy /E /I /Y dist \"C:\\Users\\mikko\\avoin_kurssi_full_stack\\backend_tehtavat\\dist\"",
+    "deploy:full": "npm run build:ui && git add . && git commit -m \"uibuild\" && git push"
   },
   "author": "Mikko Uotinen",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.0",
     "morgan": "^1.10.0"
   },
